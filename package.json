@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "socket": "node ./socket/index.js",
-    "all": "npm run build && concurrently --kill-others \"npm run start -p 5009\" \"npm run socket\"",
+    "all": "npm run build && concurrently --kill-others \"npm run start -p 5509\" \"npm run socket\"",
     "all-dev": "concurrently --kill-others \"npm run dev\" \"npm run socket\"",
     "lint": "next lint"
   },
