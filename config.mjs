@@ -1,4 +1,4 @@
-export const WEBSOCKET_PUBLIC_URL = "https://rahoot.vietcombit.vn:5551/"
+export const WEBSOCKET_PUBLIC_URL = "https://rahoot.vietcombit.vn/ws"
 export const WEBSOCKET_SERVER_PORT = 5551
 
 const QUIZZ_CONFIG = {
