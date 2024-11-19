@@ -38,7 +38,7 @@ export default function Game() {
       dispatch({ type: "LOGOUT" })
       setState(GAME_STATES)
 
-      toast("The game has been reset by the host")
+      toast("Trò chơi đã được thiết lập lại")
     })
 
     return () => {

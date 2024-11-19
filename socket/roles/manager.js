@@ -7,12 +7,12 @@ import { startRound } from "../utils/round.js"
 const Manager = {
   createRoom: (game, io, socket, password) => {
     if (game.password !== password) {
-      io.to(socket.id).emit("game:errorMessage", "Bad Password")
+      io.to(socket.id).emit("game:errorMessage", "Mật khẩu sai")
       return
     }
 
     if (game.manager || game.room) {
-      io.to(socket.id).emit("game:errorMessage", "Already manager")
+      io.to(socket.id).emit("game:errorMessage", "Đã là người quản lý")
       return
     }
 
@@ -23,7 +23,7 @@ const Manager = {
     socket.join(roomInvite)
     io.to(socket.id).emit("manager:inviteCode", roomInvite)
 
-    console.log("New room created: " + roomInvite)
+    console.log("Phòng mới được tạo: " + roomInvite)
   },
 
   kickPlayer: (game, io, socket, playerId) => {

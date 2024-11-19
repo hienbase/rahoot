@@ -12,7 +12,7 @@ const Player = {
     }
 
     if (!game.room || roomId !== game.room) {
-      socket.emit("game:errorMessage", "Room not found")
+      socket.emit("game:errorMessage", "Không tìm thấy phòng")
       return
     }
 
@@ -28,17 +28,17 @@ const Player = {
     }
 
     if (!game.room || player.room !== game.room) {
-      socket.emit("game:errorMessage", "Room not found")
+      socket.emit("game:errorMessage", "Không tìm thấy phòng")
       return
     }
 
     if (game.players.find((p) => p.username === player.username)) {
-      socket.emit("game:errorMessage", "Username already exists")
+      socket.emit("game:errorMessage", "Tên người dùng đã tồn tại")
       return
     }
 
     if (game.started) {
-      socket.emit("game:errorMessage", "Game already started")
+      socket.emit("game:errorMessage", "Trò chơi đã bắt đầu")
       return
     }
 
@@ -79,7 +79,7 @@ const Player = {
 
     socket.emit("game:status", {
       name: "WAIT",
-      data: { text: "Waiting for the players to answer" },
+      data: { text: "Đang chờ người chơi trả lời" },
     })
     socket.to(game.room).emit("game:playerAnswer", game.playersAnswer.length)
 

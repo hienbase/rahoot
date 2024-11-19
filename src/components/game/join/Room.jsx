@@ -34,7 +34,7 @@ export default function Room() {
       <Input
         onChange={(e) => setRoomId(e.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="PIN Code here"
+        placeholder="Mã PIN tại đây"
       />
       <Button onClick={() => handleLogin()}>Submit</Button>
     </Form>
